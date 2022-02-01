@@ -261,33 +261,37 @@ function Form() {
   };
 
   return (
-    <div>
-      <div className="form_header">{formTitle[activeStep - 1]}</div>
-      <div className="form_body">{getActiveForm()}</div>
-      <div className="form_footer">
-        {activeStep !== 3 ? (
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => {
-              onNextClick();
-            }}
-          >
-            Save & Next
-          </button>
-        ) : null}
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h4>{formTitle[activeStep - 1]}</h4>
+          <div className="form_body">{getActiveForm()}</div>
+          <div className="form_footer">
+            {activeStep !== 3 ? (
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  onNextClick();
+                }}
+              >
+                Save & Next
+              </button>
+            ) : null}
 
-        {activeStep === 3 ? (
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => {
-              onSubmit();
-            }}
-          >
-            Save
-          </button>
-        ) : null}
+            {activeStep === 3 ? (
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  onSubmit();
+                }}
+              >
+                Save
+              </button>
+            ) : null}
+          </div>
+        </div>
       </div>
     </div>
   );

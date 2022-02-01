@@ -29,46 +29,50 @@ const Posts = () => {
   };
 
   return (
-    <>
-      <button
-        type="button"
-        className="btn btn-link"
-        onClick={() => {
-          navigateToAddPost();
-        }}
-      >
-        Add post
-      </button>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <button
+            type="button"
+            className="btn btn-link"
+            onClick={() => {
+              navigateToAddPost();
+            }}
+          >
+            Add post
+          </button>
 
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Writeup</th>
-            <th>Image</th>
-            <th>Avatar</th>
-          </tr>
-        </thead>
-        <tbody>
-          {posts.map(item => (
-            <tr>
-              <td>{item.id}</td>
-              <td>{item.firstName}</td>
-              <td>{item.lastName}</td>
-              <td>{item.writeup}</td>
-              <td>
-                <img src={item.image} alt="" />
-              </td>
-              <td>
-                <img src={item.avatar} alt="" />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Writeup</th>
+                <th>Image</th>
+                <th>Avatar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {posts.map(item => (
+                <tr>
+                  <td>{item.id}</td>
+                  <td>{item.firstName}</td>
+                  <td>{item.lastName}</td>
+                  <td>{item.writeup}</td>
+                  <td>
+                    <img className="image_dim" src={item.image} alt="" />
+                  </td>
+                  <td>
+                    <img src={item.avatar} alt="" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   );
 };
 
